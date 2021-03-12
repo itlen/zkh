@@ -18,8 +18,8 @@ export default new Vuex.Store({
     },
     M_BREADCRUMBS (state, crumbs) {
       console.log(state.breadcrumbs);
-      state.breadcrumbs[crumbs.slug] = crumbs.label;
-      // state.breadcrumbs.push(crumbs);
+      // state.breadcrumbs[crumbs.slug] = crumbs.label;
+      state.breadcrumbs.push(crumbs);
       console.log(state.breadcrumbs);
     },
     M_BREADCRUMBS_REMOVE() {
