@@ -1,32 +1,40 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Header />
+    <main>
+      <aside>aside</aside>
+      <section>
+        <Bc />
+        <router-view />
+      </section>
+    </main>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<script>
+import Header from "@/components/header/header.vue";
+import Bc from "@/components/breadcrumbs.vue";
+export default {
+  components: {
+    Header,
+    Bc,
+  },
+  // data: function () {
+  //   return {
+  //     routs: [],
+  //   };
+  // },
+  // mounted() {
+  //   this.routs = Array.from(new Set(this.$store.state.breadcrumbs));
+  // },
+  // beforeRouteEnter(to, from, next) {
+  //   console.log("wtf 1");
+  //   next((vm) => {
+  //     console.log("wtf 2");
+  //     vm.routs = Array.from(new Set(this.$store.state.breadcrumbs));
+  //     // vm.$store.commit("M_BREADCRUMBS", to.path.split("/").slice(1, 3)[0]);
+  //     // TODO исправить 3 на нормальную длину вложенности
+  //   });
+  // },
+};
+</script>

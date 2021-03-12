@@ -1,0 +1,19 @@
+main {
+  margin: 0 auto;
+  padding: 2rem 0;
+  max-width: 1280px;
+  display: flex;
+
+  aside {
+    padding: 1rem;
+    flex-basis: 20%;
+    background-color: bisque;
+  }
+
+  section {
+    padding: 1rem;
+    flex-grow: 1;
+    text-align: left;
+    background-color: cadetblue;
+  }
+}

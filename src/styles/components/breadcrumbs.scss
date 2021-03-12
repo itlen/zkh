@@ -1,0 +1,15 @@
+.breadcrumbs {
+  &-list {
+    display: flex;
+  }
+
+  &-list_item {
+    margin-left: 1rem;
+    text-align: left;
+    list-style-type: none;
+  }
+
+  &-list_item:first-child {
+    margin-left: 0;
+  }
+}
