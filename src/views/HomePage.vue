@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1>Home page ({{ selfCount }})</h1>
+    <p>{{ text }}</p>
   </div>
 </template>
 
@@ -11,6 +12,7 @@ export default {
     return {
       nameCount: "homepage",
       selfCount: 0,
+      text: "some text on home page",
       breadcrumb: {
         label: "Хоум пейдж",
         slug: "home",
@@ -23,6 +25,7 @@ export default {
   },
   mounted() {
     this.selfCount = this.$store.state.pagesCounts[this.nameCount];
+    this.$toast.info(this.text);
   },
 };
 </script>

@@ -1,6 +1,7 @@
 <template>
   <div class="settings">
     <h1>Settings page ({{ selfCount }})</h1>
+    <p>{{ text }}</p>
   </div>
 </template>
 
@@ -11,6 +12,7 @@ export default {
     return {
       nameCount: "settingspage",
       selfCount: 0,
+      text: "some text on settings page",
       breadcrumb: {
         label: "Настройки",
         slug: "settings",
@@ -23,6 +25,7 @@ export default {
   },
   mounted() {
     this.selfCount = this.$store.state.pagesCounts[this.nameCount];
+    this.$toast.info(this.text);
   },
   // beforeRouteEnter(to, from, next) {
   //   next((vm) => {
